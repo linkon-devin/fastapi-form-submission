@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>String Processor</title>
-</head>
-<body>
-    <h1>Enter a string to process</h1>
-    <form method="post">
-        <input type="text" name="input_text" required>
-        <button type="submit">Submit</button>
-    </form>
+  <head>
+    <title>TT Decoder</title>
+  </head>
+  <body>
+    {% include 'ttinput.html' %}
 
+    <!-- tt decode result -->
     {% if result %}
-        <h2>Processed Result:</h2>
-        <p>{{ result }}</p>
+
+    <!-- decoded output -->
+    {% if result is iterable and result is not string %} {% include
+    'ttresult.html' %} {% endif %}
+    <!-- decoded output -->
+
+    <!-- tt options -->
+    {% if options %} {% include 'ttoptions.html' %} {% endif %}
+    <!-- tt options -->
+
     {% endif %}
-</body>
+    <!-- tt decode result -->
+  </body>
 </html>

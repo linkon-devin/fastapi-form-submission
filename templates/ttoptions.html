@@ -1,0 +1,10 @@
+<form method="POST" action="/submit-tt-type">
+  <select name="selected_option" id="options">
+    {% for option in options %}
+    <option value="{{ option }}" {% if loop.first %}selected{% endif %}>
+      {{ option }}
+    </option>
+    {% endfor %}
+  </select>
+  <button type="submit">Check</button>
+</form>
