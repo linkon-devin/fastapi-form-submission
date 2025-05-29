@@ -10,12 +10,17 @@
     {% if result %}
 
     <!-- decoded output -->
-    {% if result is iterable and result is not string %} {% include
-    'ttresult.html' %} {% endif %}
+    <div id="tt-result">
+      {% if result is iterable and not result is string %}
+        {% include 'ttresult.html' %}
+      {% endif %}
+    </div>
     <!-- decoded output -->
 
     <!-- tt options -->
-    {% if options %} {% include 'ttoptions.html' %} {% endif %}
+    {% if options %}
+      {% include 'ttoptions.html' %}
+    {% endif %}
     <!-- tt options -->
 
     {% endif %}

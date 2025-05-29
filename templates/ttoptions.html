@@ -1,4 +1,5 @@
 <form method="POST" action="/submit-tt-type">
+  <input type="hidden" name="input_text" value="{{ input_text }}">
   <select name="selected_option" id="options">
     {% for option in options %}
     <option value="{{ option }}" {% if loop.first %}selected{% endif %}>
@@ -8,3 +9,5 @@
   </select>
   <button type="submit">Check</button>
 </form>
+
+<script src="/static/js/tt.js"></script>
