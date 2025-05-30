@@ -1,7 +1,9 @@
 <h1>Enter TT</h1>
 
 <form method="post">
-  <textarea name="input_text" rows="10" cols="50" required></textarea>
+  <textarea name="input_text" rows="10" cols="50" required>
+{{ input_text | default('') }}</textarea
+  >
   <br />
-  <button type="submit">Decode</button>
+  <button id="decode" type="submit">Decode</button>
 </form>

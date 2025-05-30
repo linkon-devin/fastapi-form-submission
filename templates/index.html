@@ -2,28 +2,34 @@
 <html>
   <head>
     <title>TT Decoder</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/style.css') }}"
+    />
   </head>
   <body>
-    {% include 'ttinput.html' %}
+    <div class="container">
+      <div id="tt-input">{% include 'ttinput.html' %}</div>
+      <!-- tt decode result -->
+      <div id="drag-bar"></div>
+      {% if result %}
 
-    <!-- tt decode result -->
-    {% if result %}
+      <!-- decoded output -->
+      <div id="tt-result">
+        {% if result is iterable and not result is string %} {% include
+        'ttresult.html' %} {% endif %}
+      </div>
+      <!-- decoded output -->
 
-    <!-- decoded output -->
-    <div id="tt-result">
-      {% if result is iterable and not result is string %}
-        {% include 'ttresult.html' %}
+      <!-- tt options -->
+      <!-- {% if options %}
+    <div id="tt-options">{% include 'ttoptions.html' %}</div>
+    {% endif %} -->
+      <!-- tt options -->
+
       {% endif %}
+      <!-- tt decode result -->
     </div>
-    <!-- decoded output -->
-
-    <!-- tt options -->
-    {% if options %}
-      {% include 'ttoptions.html' %}
-    {% endif %}
-    <!-- tt options -->
-
-    {% endif %}
-    <!-- tt decode result -->
+    <script src="{{ url_for('static', path='js/script.js') }}"></script>
   </body>
 </html>
