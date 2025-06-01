@@ -4,7 +4,7 @@
     <title>TT Decoder</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', path='css/style.css') }}"
+      href="/static/css/style.css"
     />
   </head>
   <body>
@@ -18,14 +18,17 @@
       <div id="tt-result">
         {% if result is iterable and not result is string %} {% include
         'ttresult.html' %} {% endif %}
+
+        <!-- tt options -->
+      {% if options %}
+      <div id="tt-options">{% include 'ttoptions.html' %}</div>
+      {% endif %}
+        <!-- tt options -->
+
       </div>
       <!-- decoded output -->
 
-      <!-- tt options -->
-      <!-- {% if options %}
-    <div id="tt-options">{% include 'ttoptions.html' %}</div>
-    {% endif %} -->
-      <!-- tt options -->
+      
 
       {% endif %}
       <!-- tt decode result -->

@@ -1,9 +1,11 @@
 <h1>Enter TT</h1>
 
-<form method="post">
-  <textarea name="input_text" rows="10" cols="50" required>
+<form method="POST" action="/get-decoded-tt" class="tt-input-form" id="decode-form">
+  <textarea name="input_text" id="input_text" rows="10" cols="50" required>
 {{ input_text | default('') }}</textarea
   >
   <br />
   <button id="decode" type="submit">Decode</button>
 </form>
+
+

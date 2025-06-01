@@ -45,9 +45,9 @@ SESSION=1157
    30.05.25 12:30:45          21 0 0 0  0 0 0     0.80     1.00
    rec: 3  0/0                 22 0 1 23  5 0 1     0.00     1.00
 6666 150   3   3 06002 00000  09 0 0 0 0 0  0000000000063    0.000      0.00
-   00000000 0 sess: 1157     00   <-- This line should now be filtered out
-   30.05.25 12:30:45          00   <-- This line should now be filtered out
-   rec: 4  0/0                 00   <-- This line should now be filtered out
+   00000000 0 sess: 1157     00 
+   30.05.25 12:30:45          00  
+   rec: 4  0/0                 00 
 """
 
 expected_tts = [
@@ -63,10 +63,6 @@ expected_tts = [
 ]
 
 extracted_tts = extract_tt_data(receipt_data)
-
-print("Extracted TT Data (filtered):")
-for tt in extracted_tts:
-    print(tt)
 
 try:
     assert(expected_tts == extracted_tts)
