@@ -2,10 +2,7 @@
 <html>
   <head>
     <title>TT Decoder</title>
-    <link
-      rel="stylesheet"
-      href="/static/css/style.css"
-    />
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
   <body>
     <div class="container">
@@ -18,17 +15,8 @@
       <div id="tt-result">
         {% if result is iterable and not result is string %} {% include
         'ttresult.html' %} {% endif %}
-
-        <!-- tt options -->
-      {% if options %}
-      <div id="tt-options">{% include 'ttoptions.html' %}</div>
-      {% endif %}
-        <!-- tt options -->
-
       </div>
       <!-- decoded output -->
-
-      
 
       {% endif %}
       <!-- tt decode result -->

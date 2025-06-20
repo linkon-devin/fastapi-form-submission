@@ -1,14 +1,11 @@
-<form method="POST" action="/get-decoded-tt-by-type" class="tt-options-form" id="options-form">
+<form method="POST" action="/get-decoded-tt-by-type" class="tt-options-form-inline" id="options-form">
   <input type="hidden" name="input_text" value="{{ input_text }}" />
-  <div class="tt-options-controls">
-    <select name="selected_option" id="options">
-      {% for option in options %}
-      <option value="{{ option }}"
-        {% if option == selected_option %}selected{% endif %}>
-        {{ option }}
-      </option>
-      {% endfor %}
-    </select>
-    <button type="submit" id="check-button">Check</button>
-  </div>
+  <select name="selected_option" id="options">
+    {% for option in options %}
+    <option value="{{ option }}" {% if option == selected_option %}selected{% endif %}>
+      {{ option }}
+    </option>
+    {% endfor %}
+  </select>
+  <button type="submit" id="check-button">Check</button>
 </form>

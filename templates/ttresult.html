@@ -1,6 +1,26 @@
-<h2>Decoded TT:</h2>
-<ul style="list-style-type: none">
-  {% for item in result %}
-  <li>{{ item }}</li>
+<div class="tt-header">
+  <h2>Decoded TTs:</h2>
+  <!-- tt options -->
+  {% if options %} {% include 'ttoptions.html' %} {% endif %}
+  <!-- tt options -->
+</div>
+
+<!-- TT list -->
+<div style="max-height: 800px; overflow-y: auto">
+  {% for tt in result %}
+  <ul
+    style="
+      list-style-type: none;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    "
+  >
+    {% for line in tt.split('\n') %}
+    <li>{{ line }}</li>
+    {% endfor %}
+  </ul>
   {% endfor %}
-</ul>
+</div>
+<!-- TT list -->

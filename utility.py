@@ -4,6 +4,6 @@ def get_tt_number_from_type(tt):
 
 def get_tt_number_from_line(tt_line):
     parts = tt_line.split(maxsplit=1)
-    if parts: # Ensure there's at least one part
+    if parts:
         return parts[0]
     return None

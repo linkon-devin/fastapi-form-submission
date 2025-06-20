@@ -15,7 +15,6 @@ body {
 
 /* TT Input Panel */
 #tt-input {
-  /* flex-basis: 30%; */
   min-width: 30%;
   max-width: 90%;
   padding: 20px;
@@ -52,7 +51,7 @@ h2 {
 
 /* Textarea */
 textarea {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -61,13 +60,13 @@ textarea {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Button */
+/* Decode Button */
 #decode {
-  display: block; /* Make it behave like a block element */
-  margin: 16px auto 0; /* Top margin + auto sides = center horizontally */
-  width: 50%; /* Width is 50% of parent (the form) */
-  height: 48px; /* Fixed height */
-  padding: 0 16px; /* Horizontal padding only */
+  display: block;
+  margin: 16px auto 0;
+  width: 50%;
+  height: 48px;
+  padding: 0 16px;
   background-color: #3498db;
   color: #fff;
   font-size: 16px;
@@ -96,35 +95,43 @@ li {
   list-style: none;
 }
 
-/* Form */
-/* form {
+/* TT Header: Title and Options Alignment */
+.tt-header {
   display: flex;
-  flex-direction: column;
-} */
-
-/* TT Options Section */
-#tt-options {
-  padding: 20px 30px;
-  background-color: #fdfdfd;
-  border-top: 1px solid #ddd;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
+/* Options Container: Right-aligned */
+#tt-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* TT Options Form */
 .tt-options-form {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 10px;
+  margin: 0;
 }
 
 .tt-options-controls {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
-.tt-options-form select {
+.tt-options-form select,
+#tt-options select {
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -133,6 +140,7 @@ li {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Check Button */
 #check-button {
   padding: 10px 20px;
   font-size: 16px;
